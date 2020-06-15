@@ -1,4 +1,5 @@
 import React from 'react';
+import './app.scss';
 
 class Counter extends React.Component {
     constructor(props){
@@ -33,7 +34,7 @@ class Counter extends React.Component {
     render(){
       return(
         <div className="wrapper">
-          <h2>About this app:</h2>
+          <h2>Watch the counter go up and down!</h2>
           <h3>Count: {this.state.clicks} </h3>
           <button onClick={this.eachIncrementClick}>Increment</button>
           <button onClick={this.eachDecrementClick}>Decrement</button>
