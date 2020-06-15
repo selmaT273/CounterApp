@@ -1,26 +1,72 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+
+function Header() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <header>
+      <h1>Welcome to Stacey's Counter App!</h1>
+    </header>
+  )
+}
+
+const Footer = () => (
+  <div className="footer">
+    DeltaV 401 2020
+  </div>
+)
+
+class Counter extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      // words: 'click to increase counter',
+      clicks: 0,
+    };
+  }
+
+  handleClicks = e => {
+    let clicks = e.target.value;
+    this.setState({ clicks });
+  }
+
+  eachIncrementClick = e => {
+    e.preventDefault();
+    let clicks = this.state.clicks += 1;
+
+    this.setState({ clicks });
+  }
+
+  eachDecrementClick = e => {
+    e.preventDefault();
+    let clicks = this.state.clicks -= 1;
+
+    this.setState({ clicks });
+  }
+
+
+  render(){
+    return(
+      <div className="wrapper">
+        <h2>About this app:</h2>
+        <h3>Count: {this.state.clicks} </h3>
+        <button onClick={this.eachIncrementClick}>Increment</button>
+        <button onClick={this.eachDecrementClick}>Decrement</button>
+      </div>
+    )
+  }
+}
+
+class App extends React.Component{
+  render() {
+    return (
+      <>
+      <Header />
+      <Counter />
+      <Footer />
+      </>
+    );
+  }
 }
 
 export default App;
