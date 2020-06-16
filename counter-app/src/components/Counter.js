@@ -44,6 +44,7 @@ class Counter extends React.Component {
         <div className="wrapper">
           <h2>Watch the counter go up and down:</h2>
           <h3>Count: {this.state.clicks} </h3>
+          <input value={this.state.clicks}onChange={this.handleClicks} />
           <button onClick={this.eachIncrementClick}>Increment</button>
           <button onClick={this.eachDecrementClick}>Decrement</button>
           <div>The click counter is: {counterIndicator} </div>
