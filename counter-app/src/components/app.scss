@@ -1,0 +1,28 @@
+$border-dark: gray;
+
+body { 
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid $border-dark;
+}
+
+header {
+    height: 10vh;
+}
+
+.wrapper {
+    height: 80vh;
+    
+}
+
+footer {
+    height: 10vh;
+}
+
+button {
+    margin-left: 10px;
+}
+
+
+
